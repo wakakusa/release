@@ -1,0 +1,10 @@
+/******************************************************************************
+ * Title:UserInterface glade file Path
+ * summary:メインウィンド,VTE,ScriptEditorのGladeのファイルパスを指定
+ * 
+ *LastUpdate: 
+******************************************************************************/
+
+#define UserInterfaceFile1 "@CMAKE_INSTALL_GLADE_PREFIX@/kuikjulia.glade"
+#define UserInterfaceFile2 "@CMAKE_INSTALL_GLADE_PREFIX@/vte_window.glade"
+#define UserInterfaceFile3 "@CMAKE_INSTALL_GLADE_PREFIX@/script_editor.glade"

@@ -1,0 +1,14 @@
+/******************************************************************************
+ * Title:define PalletInterfaceFile Path
+ * summary:PalletInterfaceFileのパスを定義
+ * 
+ *LastUpdate: 
+******************************************************************************/
+
+#define PalletInterfaceFile01 "@CMAKE_INSTALL_GLADE_PREFIX@/pallet_operation.glade"
+#define PalletInterfaceFile02 "@CMAKE_INSTALL_GLADE_PREFIX@/pallet_read_data.glade"
+#define PalletInterfaceFile03 "@CMAKE_INSTALL_GLADE_PREFIX@/pallet_write_data.glade"
+
+#define PalletInterfaceFile99 "@CMAKE_INSTALL_GLADE_PREFIX@/pallet_test.glade"
+
+
