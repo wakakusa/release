@@ -119,3 +119,16 @@ G_MODULE_EXPORT void Get_Management_VTE_No(GtkLabel *vte_VTE_No)
   VTE_No=atoi( gtk_label_get_text( vte_VTE_No ) );
   sleep(0);
 }
+
+
+/**********************************************************************************************
+ * function:kuikjuliaを終了する際、どのように終了するかコマンドを送信。 
+ * 
+ * 
+ * glade:none
+ **********************************************************************************************/
+G_MODULE_EXPORT void vte_quit(GtkWidget *widget, gpointer data)
+{
+  //終了コマンドを送信
+  vte_terminal_feed_child(VTE[VTE_No].terminal1,"exit()\n",-1);
+} 

@@ -627,6 +627,7 @@
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
+                        <signal name="button-release-event" handler="cb_aboutDialog" swapped="no"/>
                       </object>
                     </child>
                   </object>
@@ -665,6 +666,7 @@
                 <property name="label" translatable="yes">start_vte</property>
                 <property name="use_underline">True</property>
                 <property name="icon_name">utilities-terminal</property>
+                <signal name="clicked" handler="start_vte" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>

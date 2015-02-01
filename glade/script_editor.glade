@@ -27,6 +27,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <signal name="clicked" handler="Script_FileOpen_Cancel" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -41,6 +42,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <signal name="clicked" handler="Script_FileOpen_OK" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -92,6 +94,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <signal name="clicked" handler="Script_FileSave_Cancel" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -106,6 +109,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <signal name="clicked" handler="Script_FileSave_OK" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -337,6 +341,7 @@
                 <property name="use_underline">True</property>
                 <property name="stock_id">gtk-save</property>
                 <signal name="clicked" handler="Script_QuikFileSave" swapped="no"/>
+                <accelerator key="s" signal="clicked" modifiers="GDK_CONTROL_MASK"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -519,6 +524,8 @@
                 <property name="right_margin">2</property>
                 <property name="show_line_numbers">True</property>
                 <property name="highlight_current_line">True</property>
+                <accelerator key="y" signal="redo" modifiers="GDK_CONTROL_MASK"/>
+                <accelerator key="z" signal="undo" modifiers="GDK_CONTROL_MASK"/>
               </object>
             </child>
           </object>
@@ -567,4 +574,3 @@
 </property>
   </object>
 </interface>
-                                                                                                                                                                    
