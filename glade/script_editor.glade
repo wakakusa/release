@@ -148,6 +148,7 @@
     <property name="destroy_with_parent">True</property>
     <property name="icon">./pixmaps/kuikjulia.svg</property>
     <property name="skip_pager_hint">True</property>
+    <signal name="focus-in-event" handler="Get_Management_SCRIPTEDITOR_No" object="scriptEditor_SCRIPTEDITOR_No" swapped="yes"/>
     <child>
       <object class="GtkBox" id="vbox1">
         <property name="visible">True</property>
@@ -449,9 +450,9 @@
                         <property name="image">image7</property>
                         <property name="use_stock">False</property>
                         <signal name="activate" handler="Send_Script_to_VTE_from_Editor" swapped="no"/>
-                        <accelerator key="Return" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                        <accelerator key="Return" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <accelerator key="F3" signal="activate"/>
+                        <accelerator key="Return" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <accelerator key="Return" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
                   </object>
@@ -524,8 +525,8 @@
                 <property name="right_margin">2</property>
                 <property name="show_line_numbers">True</property>
                 <property name="highlight_current_line">True</property>
-                <accelerator key="y" signal="redo" modifiers="GDK_CONTROL_MASK"/>
                 <accelerator key="z" signal="undo" modifiers="GDK_CONTROL_MASK"/>
+                <accelerator key="y" signal="redo" modifiers="GDK_CONTROL_MASK"/>
               </object>
             </child>
           </object>
@@ -574,4 +575,3 @@
 </property>
   </object>
 </interface>
-                                                                                                                                 

@@ -317,7 +317,7 @@
     <property name="can_focus">False</property>
     <property name="type_hint">dialog</property>
     <property name="program_name">kuikjulia</property>
-    <property name="version">0.01.1</property>
+    <property name="version">0.01.3</property>
     <property name="comments" translatable="yes">GUI for julia by GTK3</property>
     <property name="authors">wakakusa</property>
     <property name="logo">./pixmaps/kuikjulia.svg</property>
