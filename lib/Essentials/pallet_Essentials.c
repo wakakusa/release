@@ -12,12 +12,11 @@
  * 
  * glade:Pallet_Operation
 *****************************************************************************************************/
-G_MODULE_EXPORT void cb_Pallet_Basic( GtkImageMenuItem *pallet_test, gpointer user_data ) 
+G_MODULE_EXPORT void cb_Pallet_Master( GtkImageMenuItem *pallet_test, gpointer user_data ) 
 {
-  (Pallet_Operation.proc_flag1) =FALSE;
-  create_pallet(&Pallet_Operation,PalletInterfaceFile01,"Pallet_Operation");
+  create_pallet(&Pallet_Master,PalletInterfaceFile99,"Pallet_Master");
     /* windowの表示 */
-  gtk_widget_show_all((Pallet_Operation.pallet_window)); 
+  gtk_widget_show_all((Pallet_Master.window1)); 
 } 
 
 /*****************************************************************************************************
@@ -26,7 +25,9 @@ G_MODULE_EXPORT void cb_Pallet_Basic( GtkImageMenuItem *pallet_test, gpointer us
  * 
  * glade:none
 *****************************************************************************************************/
-G_MODULE_EXPORT void Pallet_Basic_chooserdialog_Cancel(GtkWidget *widget, gpointer data)
+G_MODULE_EXPORT void Pallet_Master_filechooserdialog1_Cancel(GtkWidget *widget, gpointer data)
 {
-  gtk_widget_destroy((Pallet_Operation.window1)); 
+  gtk_widget_destroy((Pallet_Master.window1)); 
 }
+
+

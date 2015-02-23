@@ -33,11 +33,12 @@ int main(int argc, char *argv[])
   //ファイルの存在チェック
   if(fopen(INI_PATH, "r") == NULL)
   {
-  	exe_enviroment_save(INI_PATH);
+  	mkdir(g_strconcat(getenv("HOME"),"/.kuikjulia/",NULL),0775 );
   	mkdir(g_strconcat(getenv("HOME"),"/.kuikjulia/ini",NULL),0775 );
+  	exe_enviroment_save(INI_PATH);
   	printf("Please Edit ~/.kuikjulia/ini/kuikjulia.ini\n");
 //    printf("file open error!!\nPlease run \"cp ./ini.sample/kuikjulia.ini ~/.kuikjulia/ini/kuikjulia.ini\"");
-    exit(EXIT_FAILURE);	/* (3)エラーの場合は通常、異常終了する */
+//    exit(EXIT_FAILURE);	/* (3)エラーの場合は通常、異常終了する */
   }
   
   exe_enviroment_load(INI_PATH);

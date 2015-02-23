@@ -70,7 +70,7 @@ G_MODULE_EXPORT void ReadText_filechooserdialog_FileOpen_OK (GtkWidget *widget,g
   //checkbuttonの確認
   //処理用共通変数
   gboolean toggle_button_active;
-  gchar *toggle_button_active_str[]={"FALSE","TRUE"};
+  gchar *toggle_button_active_str[]={"false","true"};
   
   //ヘッダーの有無 
   toggle_button_active=gtk_toggle_button_get_active(Pallet_Read_Data.check_button1);
@@ -91,8 +91,10 @@ G_MODULE_EXPORT void ReadText_filechooserdialog_FileOpen_OK (GtkWidget *widget,g
   }   
   
   sprintf(Pallet_Read_Data.dec, "%s", gtk_entry_get_text(Pallet_Read_Data.entry6));//オブジェクト名取得
-
-  (Pallet_Read_Data.script1) = g_strconcat(g_strconcat(Pallet_Read_Data.object_name,"<-read.table(\"",Pallet_Read_Data.file1,"\",header=",Pallet_Read_Data.TF_flag1,",sep =\"",Pallet_Read_Data.separator,"\",dec=\"",Pallet_Read_Data.dec,"\",skip=",Pallet_Read_Data.skip,",comment.char=\"",Pallet_Read_Data.comment_char,"\"",",row.names=",Pallet_Read_Data.row_names,"",");\n",NULL));
+/*将来の引数拡張対応のために残しておく
+  (Pallet_Read_Data.script1) = g_strconcat(g_strconcat(Pallet_Read_Data.object_name," = readtable(\"",Pallet_Read_Data.file1,"\",header=",Pallet_Read_Data.TF_flag1,",separator ='",Pallet_Read_Data.separator,"',dec='",Pallet_Read_Data.dec,"',skip=",Pallet_Read_Data.skip,",comment.char=\"",Pallet_Read_Data.comment_char,"\"",",row.names=",Pallet_Read_Data.row_names,"",");\n",NULL));
+*/
+  (Pallet_Read_Data.script1) = g_strconcat("using DataFrames\n",Pallet_Read_Data.object_name," = readtable(\"",Pallet_Read_Data.file1,"\",header=",Pallet_Read_Data.TF_flag1,",separator ='",Pallet_Read_Data.separator,"');\n",NULL);
   (Pallet_Read_Data.proc_flag1)=TRUE;
   
   gtk_widget_destroy((Pallet_Read_Data.window1)); 

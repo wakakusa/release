@@ -28,10 +28,10 @@ typedef struct {
 /*構造体変数名を宣言*/
 StructPalletWidget Pallet_Master; 
 
-StructPalletWidget Pallet_Operation;
+StructPalletWidget Pallet_Filesystem;
 StructPalletWidget Pallet_Read_Data;
 StructPalletWidget Pallet_Write_Data;
 StructPalletWidget Pallet_Test;
-
+StructPalletWidget Pallet_Essentials;
 
 

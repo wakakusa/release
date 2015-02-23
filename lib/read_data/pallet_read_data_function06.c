@@ -77,8 +77,9 @@ G_MODULE_EXPORT void Read_Excelfile_chooserdialog_FileOpen_OK (GtkWidget *widget
   sprintf(Pallet_Read_Data.start_row, "%s", gtk_entry_get_text(Pallet_Read_Data.entry3));//開始行数取得
   sprintf(Pallet_Read_Data.start_col, "%s", gtk_entry_get_text(Pallet_Read_Data.entry4));//開始列数取得
 
+  /*将来の引数拡張対応のために残しておく
   (Pallet_Read_Data.script1) =g_strconcat(Pallet_Read_Data.object_name,"<-readWorksheetFromFile(\"",Pallet_Read_Data.file1,"\",header=",Pallet_Read_Data.TF_flag1,",sheet =\"",Pallet_Read_Data.sheet_name,"\",startRow=",Pallet_Read_Data.start_row,",startCol=",Pallet_Read_Data.start_col,");\n",NULL);
-
+*/
  //OKボタンを押下したので後続処理を実行させるためにflagを変更する。
  (Pallet_Read_Data.proc_flag1)=TRUE;
   

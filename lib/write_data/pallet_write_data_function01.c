@@ -64,7 +64,7 @@ G_MODULE_EXPORT void create_WriteText_filechooserdialog_OK (GtkWidget *widget,gp
   //checkbuttonの確認
   //処理用共通変数
   gboolean toggle_button_active;
-  gchar *toggle_button_active_str[]={"FALSE","TRUE"};  
+  gchar *toggle_button_active_str[]={"false","true"};  
   
   /*written row.names 制御*/
   toggle_button_active=gtk_toggle_button_get_active(Pallet_Write_Data.check_button1);
@@ -74,8 +74,11 @@ G_MODULE_EXPORT void create_WriteText_filechooserdialog_OK (GtkWidget *widget,gp
   toggle_button_active=gtk_toggle_button_get_active(Pallet_Write_Data.check_button2);
   sprintf(Pallet_Write_Data.TF_flag2,toggle_button_active_str[toggle_button_active]);
 
-  Pallet_Write_Data.script1 =g_strconcat("write.csv(",Pallet_Write_Data.object_name,",file=\"",Pallet_Write_Data.file1,"\",row.names=",Pallet_Write_Data.TF_flag1,",col.names=",Pallet_Write_Data.TF_flag2,");\n",NULL);
-  (Pallet_Write_Data.proc_flag1) =TRUE;
+  /*将来の引数オプションのために残している
+  Pallet_Write_Data.script1 =g_strconcat("writetable(\"",Pallet_Write_Data.file1,"\",",Pallet_Write_Data.object_name,",row.names=",Pallet_Write_Data.TF_flag1,",col.names=",Pallet_Write_Data.TF_flag2,");\n",NULL);
+  */
+ Pallet_Write_Data.script1 =g_strconcat("using DataFrames\n","writetable(\"",Pallet_Write_Data.file1,"\",",Pallet_Write_Data.object_name,");\n",NULL);
+ (Pallet_Write_Data.proc_flag1) =TRUE;
 
   gtk_widget_destroy((Pallet_Write_Data.window1)); 
 }

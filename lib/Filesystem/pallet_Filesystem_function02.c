@@ -16,7 +16,7 @@
  * 
  * glade:none
 ************************************************************************************************************/
-G_MODULE_EXPORT void cb_basic_function2_for_terminal(GtkWidget *widget, gpointer data)
+G_MODULE_EXPORT void cb_Filesystem_function2_for_terminal(GtkWidget *widget, gpointer data)
 {
   
   gchar *script;
@@ -34,7 +34,7 @@ G_MODULE_EXPORT void cb_basic_function2_for_terminal(GtkWidget *widget, gpointer
  * 
  * glade:none
 ************************************************************************************************************/
-G_MODULE_EXPORT void cb_basic_function2_for_editor(GtkWidget *widget, gpointer data)
+G_MODULE_EXPORT void cb_Filesystem_function2_for_editor(GtkWidget *widget, gpointer data)
 {
 
   gchar *script;

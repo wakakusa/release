@@ -365,7 +365,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox1">
+                          <object class="GtkBox" id="hbox1">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -378,7 +378,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image49</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function1_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function1_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -393,7 +393,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image50</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function1_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function1_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -433,7 +433,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox2">
+                          <object class="GtkBox" id="hbox2">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -446,7 +446,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image51</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function2_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function2_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -461,7 +461,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image52</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function2_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function2_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -500,7 +500,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox3">
+                          <object class="GtkBox" id="hbox3">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -513,7 +513,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image53</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function3_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function3_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -528,7 +528,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image54</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function3_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function3_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -567,7 +567,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox4">
+                          <object class="GtkBox" id="hbox4">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -580,7 +580,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image55</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function4_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function4_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -595,7 +595,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image56</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function4_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function4_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -634,7 +634,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox5">
+                          <object class="GtkBox" id="hbox5">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -647,7 +647,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image57</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function5_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function5_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -662,7 +662,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image58</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function5_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function5_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -701,7 +701,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox6">
+                          <object class="GtkBox" id="hbox6">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -714,7 +714,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image59</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function6_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function6_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -729,7 +729,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image60</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function6_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function6_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -768,7 +768,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox7">
+                          <object class="GtkBox" id="hbox7">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -781,7 +781,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image61</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function7_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function7_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -796,7 +796,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image62</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function7_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function7_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -835,7 +835,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox8">
+                          <object class="GtkBox" id="hbox8">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -848,7 +848,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image63</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function8_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function8_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -863,7 +863,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image64</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function8_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function8_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -902,7 +902,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox9">
+                          <object class="GtkBox" id="hbox9">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -915,7 +915,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image65</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function9_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function9_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -930,7 +930,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image66</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function9_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function9_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -969,7 +969,7 @@
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkHBox" id="hbox10">
+                          <object class="GtkBox" id="hbox10">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="homogeneous">True</property>
@@ -982,7 +982,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image67</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function10_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function10_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -997,7 +997,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image68</property>
                                 <property name="image_position">top</property>
-                                <signal name="released" handler="cb_function10_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function10_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>

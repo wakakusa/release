@@ -7,7 +7,7 @@
 
  
 /*****************************************************************************************************
- * function9:R save binary file
+ * function6:R save binary file
 *****************************************************************************************************/
 
 /*****************************************************************************************************
@@ -16,7 +16,7 @@
  * 
  * glade:save_filechooserdialog
 *****************************************************************************************************/
-G_MODULE_EXPORT void cb_basic_function9_for_terminal(GtkWidget *widget, gpointer data)
+G_MODULE_EXPORT void cb_Filesystem_function6_for_terminal(GtkWidget *widget, gpointer data)
 {
 	gchar *script;
 	g_free(script);
@@ -30,11 +30,10 @@ G_MODULE_EXPORT void cb_basic_function9_for_terminal(GtkWidget *widget, gpointer
  * 
  * glade:save_filechooserdialog
 *****************************************************************************************************/
-G_MODULE_EXPORT void cb_basic_function9_for_editor(GtkWidget *widget, gpointer data)
+G_MODULE_EXPORT void cb_Filesystem_function6_for_editor(GtkWidget *widget, gpointer data)
 {
 	gchar *script;
 	g_free(script);
 	ScriptEditor_insert(&SCRIPTEDITOR[SCRIPTEDITOR_No],script);
 }
-
 

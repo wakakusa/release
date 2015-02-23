@@ -2,313 +2,6 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
-  <object class="GtkFileChooserDialog" id="Write_CSV_filechooserdialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
-    <property name="title" translatable="yes">Write to csv</property>
-    <property name="role">GtkFileChooserDialog</property>
-    <property name="type_hint">dialog</property>
-    <property name="action">save</property>
-    <property name="do_overwrite_confirmation">True</property>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="Write_CSV_filechooserdialog-vbox1">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="Write_CSV_filechooserdialog-action_area1">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
-            <child>
-              <object class="GtkButton" id="Write_CSV_filechooserdialog_cancel_button1">
-                <property name="label">gtk-cancel</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-                <signal name="clicked" handler="Pallet_Write_Data_chooserdialog_Cancel" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="Write_CSV_filechooserdialog_ok_button1">
-                <property name="label">gtk-save</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-                <signal name="clicked" handler="create_WriteText_filechooserdialog_OK" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkTable" id="Write_CSV_filechooserdialog_table1">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="n_rows">2</property>
-            <property name="n_columns">2</property>
-            <child>
-              <object class="GtkLabel" id="Write_CSV_filechooserdialog_label1">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">object name</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkEntry" id="Write_CSV_filechooserdialog_entry1">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="max_length">511</property>
-                <property name="invisible_char">●</property>
-                <property name="text" translatable="yes">x</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="Write_CSV_filechooserdialog_checkbutton1">
-                <property name="label" translatable="yes">written row.names</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="xalign">0.5</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="top_attach">1</property>
-                <property name="bottom_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="Write_CSV_filechooserdialog_checkbutton2">
-                <property name="label" translatable="yes">written col.names</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="xalign">0.5</property>
-                <property name="active">True</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-                <property name="top_attach">1</property>
-                <property name="bottom_attach">2</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-    <action-widgets>
-      <action-widget response="0">Write_CSV_filechooserdialog_cancel_button1</action-widget>
-      <action-widget response="0">Write_CSV_filechooserdialog_ok_button1</action-widget>
-    </action-widgets>
-  </object>
-  <object class="GtkFileChooserDialog" id="Write_Excel_filechooserdialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
-    <property name="title" translatable="yes">Write to csv</property>
-    <property name="role">GtkFileChooserDialog</property>
-    <property name="type_hint">dialog</property>
-    <property name="action">save</property>
-    <property name="do_overwrite_confirmation">True</property>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox2">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area2">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
-            <child>
-              <object class="GtkButton" id="Write_CSV_filechooserdialog_cancel_button2">
-                <property name="label">gtk-cancel</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="Write_CSV_filechooserdialog_ok_button2">
-                <property name="label">gtk-save</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-                <signal name="clicked" handler="create_Excel_Excel_filechooserdialog_OK" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkTable" id="Write_Excel_filechooserdialog_table1">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="n_rows">4</property>
-            <property name="n_columns">2</property>
-            <child>
-              <object class="GtkLabel" id="Write_Excel_filechooserdialog_label1">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">object name</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkEntry" id="Write_Excel_filechooserdialog_entry1">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="max_length">511</property>
-                <property name="invisible_char">●</property>
-                <property name="text" translatable="yes">x</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="Write_Excel_filechooserdialog_label2">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">sheet name</property>
-              </object>
-              <packing>
-                <property name="top_attach">1</property>
-                <property name="bottom_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="Write_Excel_filechooserdialog_label3">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">startRow</property>
-              </object>
-              <packing>
-                <property name="top_attach">2</property>
-                <property name="bottom_attach">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="Write_Excel_filechooserdialog_label4">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">startCol</property>
-              </object>
-              <packing>
-                <property name="top_attach">3</property>
-                <property name="bottom_attach">4</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry" id="Write_Excel_filechooserdialog_entry2">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="invisible_char">●</property>
-                <property name="text" translatable="yes">sheet1</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-                <property name="top_attach">1</property>
-                <property name="bottom_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry" id="Write_Excel_filechooserdialog_entry3">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="invisible_char">●</property>
-                <property name="text" translatable="yes">1</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-                <property name="top_attach">2</property>
-                <property name="bottom_attach">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry" id="Write_Excel_filechooserdialog_entry4">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="invisible_char">●</property>
-                <property name="text" translatable="yes">1</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-                <property name="top_attach">3</property>
-                <property name="bottom_attach">4</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-    <action-widgets>
-      <action-widget response="0">Write_CSV_filechooserdialog_cancel_button2</action-widget>
-      <action-widget response="0">Write_CSV_filechooserdialog_ok_button2</action-widget>
-    </action-widgets>
-  </object>
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -634,12 +327,12 @@
     <property name="can_focus">False</property>
     <property name="icon_name">utilities-terminal</property>
   </object>
-  <object class="GtkWindow" id="Pallet_Write_Data">
+  <object class="GtkWindow" id="Pallet_Essentials">
     <property name="width_request">120</property>
     <property name="height_request">600</property>
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">kuikjulia_Operation</property>
-    <property name="role">kuikjulia_Operation</property>
+    <property name="title" translatable="yes">kuikjulia_Essentials</property>
+    <property name="role">Essentials</property>
     <property name="resizable">False</property>
     <property name="default_width">120</property>
     <property name="default_height">600</property>
@@ -661,14 +354,10 @@
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkLabel" id="label11">
+                  <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Write Data</property>
-                    <attributes>
-                      <attribute name="style" value="normal"/>
-                      <attribute name="weight" value="bold"/>
-                    </attributes>
+                    <property name="label" translatable="yes">Essentials</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -680,7 +369,6 @@
                   <object class="GtkFrame" id="frame01">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">set working directory</property>
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">none</property>
                     <child>
@@ -702,7 +390,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image49</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function1_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function1_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -717,7 +405,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image50</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function1_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function1_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -733,8 +421,7 @@
                       <object class="GtkLabel" id="label01">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">CSV</property>
-                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">include</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
@@ -751,7 +438,6 @@
                   <object class="GtkFrame" id="frame02">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">get working directory</property>
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">none</property>
                     <child>
@@ -773,7 +459,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image51</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function2_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function2_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -788,7 +474,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image52</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function2_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function2_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -804,8 +490,7 @@
                       <object class="GtkLabel" id="label02">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Excel</property>
-                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">Func2</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
@@ -822,7 +507,6 @@
                   <object class="GtkFrame" id="frame03">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">set source file</property>
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">none</property>
                     <child>
@@ -844,7 +528,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image53</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function3_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function3_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -859,7 +543,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image54</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function3_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function3_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -875,8 +559,7 @@
                       <object class="GtkLabel" id="label03">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Txt</property>
-                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">Func3</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
@@ -914,7 +597,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image55</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function4_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function4_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -929,7 +612,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image56</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function4_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function4_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -946,7 +629,6 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Func4</property>
-                        <property name="justify">center</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
@@ -984,7 +666,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image57</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function5_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function5_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -999,7 +681,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image58</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function5_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function5_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1016,7 +698,6 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Func5</property>
-                        <property name="justify">center</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
@@ -1036,7 +717,7 @@
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">none</property>
                     <child>
-                      <object class="GtkAlignment" id="alignment6">
+                      <object class="GtkAlignment" id="alignment06">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
@@ -1054,7 +735,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image59</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function6_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function6_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1069,7 +750,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image60</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function6_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function6_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1085,9 +766,10 @@
                       <object class="GtkLabel" id="label06">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Func6&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
-                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">Func6</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                     </child>
                   </object>
@@ -1122,7 +804,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image61</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function7_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function7_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1137,7 +819,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image62</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function7_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function7_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1153,9 +835,10 @@
                       <object class="GtkLabel" id="label07">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Func7&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
-                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">Func7</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                     </child>
                   </object>
@@ -1172,7 +855,7 @@
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">none</property>
                     <child>
-                      <object class="GtkAlignment" id="alignment8">
+                      <object class="GtkAlignment" id="alignment08">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
@@ -1190,7 +873,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image63</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function8_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function8_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1205,7 +888,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image64</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function8_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function8_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1221,9 +904,10 @@
                       <object class="GtkLabel" id="label08">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Func8&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
-                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">Func8</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                     </child>
                   </object>
@@ -1240,7 +924,7 @@
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">none</property>
                     <child>
-                      <object class="GtkAlignment" id="alignment9">
+                      <object class="GtkAlignment" id="alignment09">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="left_padding">12</property>
@@ -1258,7 +942,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image65</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function9_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function9_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1273,7 +957,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image66</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function9_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function9_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1289,9 +973,10 @@
                       <object class="GtkLabel" id="label09">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Func9&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
-                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">Func9</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                     </child>
                   </object>
@@ -1326,7 +1011,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image67</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function10_for_editor" swapped="no"/>
+                                <signal name="clicked" handler="cb_function10_for_editor" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1341,7 +1026,7 @@
                                 <property name="receives_default">True</property>
                                 <property name="image">image68</property>
                                 <property name="image_position">top</property>
-                                <signal name="clicked" handler="cb_write_data_function10_for_terminal" swapped="no"/>
+                                <signal name="clicked" handler="cb_function10_for_terminal" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1357,9 +1042,10 @@
                       <object class="GtkLabel" id="label10">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Func10&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
-                        <property name="justify">center</property>
+                        <property name="label" translatable="yes">Func10</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                     </child>
                   </object>

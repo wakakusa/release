@@ -104,7 +104,7 @@ G_MODULE_EXPORT void start_vte(GtkWidget *widget, gpointer data)
   gtk_label_set_text( VTE[VTE_No_HighWaterMark].Management_VTE_No , Management_No );
   
   gtk_widget_show_all((VTE[VTE_No_HighWaterMark].window1)); 
-  VTE_No_HighWaterMark++;//SCRIPTEDITOR_Noのカウントアップ
+  VTE_No_HighWaterMark++;//VTE_Noのカウントアップ
 }
 
 

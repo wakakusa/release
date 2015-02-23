@@ -5,17 +5,18 @@
 #include "script_editor_window_structures.h"
 #include "pallet_defines.h"
 
-/*****************************************************************************************************
- * function3:read julia script file 
-*****************************************************************************************************/
 
 /*****************************************************************************************************
- * function:ダイアログを作成する 
- * 
- * 
- * GUI:sourcefile_chooserdialog
+ * function1:change working directory
 *****************************************************************************************************/
-void create_sourcefile_chooserdialog(StructPalletWidget *struct_widget,char UI_FILE[PATH_LENGTH],char Window_name[512])
+ 
+/*****************************************************************************************************
+ * function:ダイアログ作成
+ * 
+ * 
+ * glade:workdirectory_chooserdialog
+*****************************************************************************************************/
+void create_workdirectory_chooserdialog(StructPalletWidget *struct_widget,char UI_FILE[PATH_LENGTH],char Window_name[512])
 {
   GtkBuilder *builder;
   GError* error = NULL;
@@ -48,17 +49,17 @@ void create_sourcefile_chooserdialog(StructPalletWidget *struct_widget,char UI_F
  * function:ファイル選択ダイアログをOKで閉じ、処理する
  * 
  * 
- * GUI:sourcefile_chooserdialog
+ * glade:workdirectory_chooserdialog
 *****************************************************************************************************/
-G_MODULE_EXPORT void create_sourcefile_chooserdialog_FileOpen_OK (GtkWidget *widget,gpointer data  )
+G_MODULE_EXPORT void create_workdirectory_chooserdialog_FileOpen_OK (GtkWidget *widget,gpointer data  )
 {
 
-  (Pallet_Operation.file1) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(Pallet_Operation.window1));
+  (Pallet_Filesystem.file1) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(Pallet_Filesystem.window1));
 
-  (Pallet_Operation.script1) = g_strconcat("include(\"",Pallet_Operation.file1,"\")\n",NULL);
+  (Pallet_Filesystem.script1) = g_strconcat("cd(\"",Pallet_Filesystem.file1,"\")\n",NULL);
   
-  (Pallet_Operation.proc_flag1) =TRUE;
-  gtk_widget_destroy((Pallet_Operation.window1)); 
+  (Pallet_Filesystem.proc_flag1) =TRUE;
+  gtk_widget_destroy((Pallet_Filesystem.window1)); 
 }
 
 
@@ -66,42 +67,43 @@ G_MODULE_EXPORT void create_sourcefile_chooserdialog_FileOpen_OK (GtkWidget *wid
  * function:ターミナル用処理
  * 
  * 
- * GUI:sourcefile_chooserdialog
+ * glade:workdirectory_chooserdialog
 *****************************************************************************************************/
-G_MODULE_EXPORT void cb_basic_function3_for_terminal(GtkWidget *widget, gpointer data)
+G_MODULE_EXPORT void cb_Filesystem_function1_for_terminal(GtkWidget *widget, gpointer data)
 {
-  create_sourcefile_chooserdialog(&Pallet_Operation,PalletInterfaceFile01,"sourcefile_chooserdialog");
-  gtk_dialog_run(GTK_DIALOG(Pallet_Operation.window1));
-  gtk_widget_destroy(Pallet_Operation.window1);
-  
-  if((Pallet_Operation.proc_flag1) ==TRUE)
-  {  
-	  Vte_terminal_insert(&VTE[VTE_No],Pallet_Operation.script1 );
-	  g_free(Pallet_Operation.script1);
+  create_workdirectory_chooserdialog(&Pallet_Filesystem,PalletInterfaceFile01,"workdirectory_chooserdialog");
+  gtk_dialog_run(GTK_DIALOG(Pallet_Filesystem.window1));
+  gtk_widget_destroy(Pallet_Filesystem.window1);
+   
+  if((Pallet_Filesystem.proc_flag1) ==TRUE)
+  { 
+	  Vte_terminal_insert(&VTE[VTE_No],Pallet_Filesystem.script1);
+	  g_free( Pallet_Filesystem.script1 );
   }
   
-  (Pallet_Operation.proc_flag1) =FALSE;
+  (Pallet_Filesystem.proc_flag1) =FALSE;
 }
+
 
 /*****************************************************************************************************
  * function:エディタ用処理
  * 
  * 
- * GUI:sourcefile_chooserdialog
+ * glade:workdirectory_chooserdialog
 *****************************************************************************************************/
-G_MODULE_EXPORT void cb_basic_function3_for_editor(GtkWidget *widget, gpointer data)
+G_MODULE_EXPORT void cb_Filesystem_function1_for_editor(GtkWidget *widget, gpointer data)
 {
-  create_sourcefile_chooserdialog(&Pallet_Operation,PalletInterfaceFile01,"sourcefile_chooserdialog");
-  gtk_dialog_run(GTK_DIALOG(Pallet_Operation.window1));
-  gtk_widget_destroy(Pallet_Operation.window1);
+  create_workdirectory_chooserdialog(&Pallet_Filesystem,PalletInterfaceFile01,"workdirectory_chooserdialog");
+  gtk_dialog_run(GTK_DIALOG(Pallet_Filesystem.window1));
+  gtk_widget_destroy(Pallet_Filesystem.window1);
   
-  if((Pallet_Operation.proc_flag1) ==TRUE)
-  {  
-	  ScriptEditor_insert(&SCRIPTEDITOR[SCRIPTEDITOR_No],Pallet_Operation.script1);
-	  g_free(Pallet_Operation.script1);
+  if((Pallet_Filesystem.proc_flag1) ==TRUE)
+  { 
+	  ScriptEditor_insert(&SCRIPTEDITOR[SCRIPTEDITOR_No],Pallet_Filesystem.script1);
+	  g_free( Pallet_Filesystem.script1 );
   }
   
-  (Pallet_Operation.proc_flag1) =FALSE;
+  (Pallet_Filesystem.proc_flag1) =FALSE;
 }
 
 

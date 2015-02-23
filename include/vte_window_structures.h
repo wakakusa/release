@@ -4,7 +4,7 @@
  * 
  *LastUpdate: 
 ******************************************************************************/
-#define VTE_No_MAX 2
+#define VTE_No_MAX 50
 
 gint VTE_No_HighWaterMark;
 gint VTE_No;
