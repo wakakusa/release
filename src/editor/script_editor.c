@@ -22,6 +22,7 @@ void create_script_editor(StructSCRIPTEDITORWidget *struct_widget,char UI_FILE[P
 {
   GtkBuilder *builder;
   GError* error = NULL;
+  gchar header[]="################################################################################\n#Title:\n#Summary:\n#Author:\n#Last Update:\n################################################################################\n\n\n\n\n";
 
   /* GtkBuilder作成 */
   builder = gtk_builder_new(); 
@@ -46,7 +47,7 @@ void create_script_editor(StructSCRIPTEDITORWidget *struct_widget,char UI_FILE[P
 
 //	gtk_source_buffer_begin_not_undoable_action (struct_widget->sourcebuffer1);
   ( struct_widget->sourcebuffer1 )=GTK_SOURCE_BUFFER(gtk_text_view_get_buffer(GTK_TEXT_VIEW(struct_widget->sourceview1)));
-	gtk_text_buffer_set_text(GTK_TEXT_BUFFER(struct_widget->sourcebuffer1), "################################################################################\n#Title:\n#Summary:\n#Author:\n#Last Update:\n################################################################################\n\n\n\n\n",-1);
+	gtk_text_buffer_set_text(GTK_TEXT_BUFFER(struct_widget->sourcebuffer1), header ,-1);
 //	gtk_source_buffer_end_not_undoable_action (struct_widget->sourcebuffer1);
 
 

@@ -98,6 +98,9 @@ G_MODULE_EXPORT void Script_FileSave_OK (GtkWidget *widget,gpointer data  )
    g_free(buf);
    
    SCRIPT_OpenSave[SCRIPTEDITOR_No].QuikSave_flag=TRUE ;
+   
+  /*window title変更*/
+  gtk_window_set_title( SCRIPTEDITOR[SCRIPTEDITOR_No].window1, SCRIPT_OpenSave[SCRIPTEDITOR_No].file1 );
   
   gtk_widget_destroy((SCRIPT_OpenSave[SCRIPTEDITOR_No].window1)); 
 }

@@ -57,7 +57,7 @@ G_MODULE_EXPORT void kuikjulia_quit(GtkWidget *widget, gpointer data)
 {
   gchar send_command[5];
   //終了コマンドを送信
-  vte_terminal_feed_child(VTE[VTE_No].terminal1,"exit()\n",-1);
+  vte_terminal_feed_child(VTE[VTE_No].terminal1,"exit(0)\n",-1);
 
   //データを保存するかどうか
 /*  g_sprintf(send_command,"%s\n",EXE_ENVIROMENT.Save_workspace_image);

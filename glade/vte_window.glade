@@ -2,7 +2,6 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
-  <requires lib="" version="0.0"/>
   <requires lib="vte-2.91" version="0.38"/>
   <object class="GtkWindow" id="VTE_MainWindow">
     <property name="can_focus">False</property>
