@@ -98,16 +98,17 @@ G_MODULE_EXPORT void Script_FileOpen_OK (GtkWidget *widget,gpointer data  )
   gchar *buf;
   gsize size;
  
-  ( SCRIPT_OpenSave[SCRIPTEDITOR_No].file1 ) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(SCRIPT_OpenSave[SCRIPTEDITOR_No].window1));
- 
+//  ( SCRIPT_OpenSave[SCRIPTEDITOR_No].file1 ) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(SCRIPT_OpenSave[SCRIPTEDITOR_No].window1));
+  ( SCRIPT_OpenSave[SCRIPTEDITOR_No_HighWaterMark].file1 ) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(SCRIPT_OpenSave[SCRIPTEDITOR_No].window1));
+   
   /*テキストファイルを読み込み、テキストビューに表示*/
-  if (g_file_get_contents( SCRIPT_OpenSave[SCRIPTEDITOR_No].file1 ,&buf,&size,NULL)) {
+  if (g_file_get_contents( SCRIPT_OpenSave[SCRIPTEDITOR_No_HighWaterMark].file1 ,&buf,&size,NULL)) {
     gtk_text_buffer_set_text(struct_widget->sourcebuffer1,buf,size);
     g_free(buf);
   }
   
   /*window title変更*/
-  gtk_window_set_title( SCRIPTEDITOR[SCRIPTEDITOR_No_HighWaterMark].window1, SCRIPT_OpenSave[SCRIPTEDITOR_No].file1 );
+  gtk_window_set_title( SCRIPTEDITOR[SCRIPTEDITOR_No_HighWaterMark].window1, SCRIPT_OpenSave[SCRIPTEDITOR_No_HighWaterMark].file1 );
   
   SCRIPT_OpenSave[SCRIPTEDITOR_No_HighWaterMark].QuikSave_flag=TRUE ;
   SCRIPTEDITOR_No_HighWaterMark++;//SCRIPTEDITOR_Noのカウントアップ
