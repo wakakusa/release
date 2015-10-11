@@ -6,7 +6,7 @@
 #include "pallet_defines.h"
 
 /**********************************************************************************************
- * function3:TXTファイルへ dataの書き込み関数定義。 
+ * function3:JLDファイルへ dataの書き込み関数定義。 
  * 
  **********************************************************************************************/
 
@@ -15,9 +15,9 @@
  * function:データ読み込み用ダイアログ表示callback関数。 
  * 
  * 
- * glade:Write_txt_filechooserdialog
+ * glade:Write_JLD_filechooserdialog
  **********************************************************************************************/
-void create_Write_Txt_filechooserdialog(StructPalletWidget *struct_widget,char UI_FILE[PATH_LENGTH],char Window_name[512])
+void create_Write_JLD_filechooserdialog(StructPalletReadWriteData *struct_widget,char UI_FILE[PATH_LENGTH],char Window_name[512])
 {
   GtkBuilder *builder;
   GError* error = NULL;
@@ -33,13 +33,11 @@ void create_Write_Txt_filechooserdialog(StructPalletWidget *struct_widget,char U
   }
 
   /* windowのオブジェクト取得 */
-  (struct_widget->window1) = GTK_WIDGET( gtk_builder_get_object(builder, Window_name)); 
+  (struct_widget->function_window1) = GTK_WIDGET( gtk_builder_get_object(builder, Window_name)); 
   /*複数のウィジェットを操作する場合、構造体に格納にすること。
    * 格納先にあわせて、GTK_LABELやGTK_ENTRYなどGTK_～を変更すること。
    *不明な場合はGTK_WIDGETでも可能。ただしエラーは出力される。*/
-   (struct_widget->entry1) 		 = GTK_ENTRY(gtk_builder_get_object(builder, "Write_CSV_filechooserdialog_entry1"));
-   (struct_widget->check_button1) = GTK_CHECK_BUTTON(gtk_builder_get_object(builder, "Write_CSV_filechooserdialog_checkbutton1"));
-   (struct_widget->check_button2) = GTK_CHECK_BUTTON(gtk_builder_get_object(builder, "Write_CSV_filechooserdialog_checkbutton2"));
+   (struct_widget->entry_variable_name) 		 = GTK_ENTRY(gtk_builder_get_object(builder, "Write_JLD_filechooserdialog_entry_variable_name"));
 
   /* UI_FILEのシグナルハンドラの設定  This is important */
   gtk_builder_connect_signals (builder, &struct_widget); 
@@ -53,31 +51,23 @@ void create_Write_Txt_filechooserdialog(StructPalletWidget *struct_widget,char U
  * 
  * glade:none
  **********************************************************************************************/
-G_MODULE_EXPORT void create_WriteText_filechooserdialog_OK (GtkWidget *widget,gpointer data  )
+G_MODULE_EXPORT void create_WriteJLD_filechooserdialog_OK (GtkWidget *widget,gpointer data  )
 {
-  //保存先ファイル名を取得
-  (Pallet_Write_Data.file1) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(Pallet_Write_Data.window1));
+	const gchar *toggle_button_active_str[]={"false","true"};
 
-  //オブジェクト名取得
-  sprintf(Pallet_Write_Data.object_name, "%s", gtk_entry_get_text(Pallet_Write_Data.entry1));
- 
-  //checkbuttonの確認
-  //処理用共通変数
-  gboolean toggle_button_active;
-  gchar *toggle_button_active_str[]={"FALSE","TRUE"};  
-  
-  /*written row.names 制御*/
-  toggle_button_active=gtk_toggle_button_get_active(Pallet_Write_Data.check_button1);
-  sprintf(Pallet_Write_Data.TF_flag1,toggle_button_active_str[toggle_button_active]);
-  
-  /*written col.names 制御*/
-  toggle_button_active=gtk_toggle_button_get_active(Pallet_Write_Data.check_button2);
-  sprintf(Pallet_Write_Data.TF_flag2,toggle_button_active_str[toggle_button_active]);
+	//変数名取得
+	Pallet_Write_Data.variable_name=gtk_entry_get_text(Pallet_Write_Data.entry_variable_name);//変数名取得
 
-  Pallet_Write_Data.script1 =g_strconcat("writetable(",Pallet_Write_Data.object_name,",file=\"",Pallet_Write_Data.file1,"\",row.names=",Pallet_Write_Data.TF_flag1,",col.names=",Pallet_Write_Data.TF_flag2,");\n",NULL);
-  (Pallet_Write_Data.proc_flag1) =TRUE;
 
-  gtk_widget_destroy((Pallet_Write_Data.window1)); 
+	//保存先ファイル名を取得
+	Pallet_Write_Data.file_path1 = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(Pallet_Write_Data.function_window1));
+	Pallet_Write_Data.script1 =g_strconcat("using JLD\n","write(\"",Pallet_Write_Data.file_path1,"\",",Pallet_Write_Data.variable_name,NULL);
+	g_free(Pallet_Write_Data.file_path1);
+	
+	Pallet_Write_Data.script1=g_strconcat(Pallet_Write_Data.script1,");\n",NULL);
+	(Pallet_Write_Data.process_check_flag1) =TRUE;
+
+	gtk_widget_destroy((Pallet_Write_Data.function_window1)); 
 }
 
 
@@ -85,41 +75,41 @@ G_MODULE_EXPORT void create_WriteText_filechooserdialog_OK (GtkWidget *widget,gp
  * function:ターミナル用処理
  * 
  * 
- * glade:Write_CSV_filechooserdialog
+ * glade:Write_JLD_filechooserdialog
 *****************************************************************************************************/
 G_MODULE_EXPORT void cb_write_data_function3_for_terminal(GtkWidget *widget, gpointer data)
 {
-  create_Write_CSV_filechooserdialog(&Pallet_Write_Data,PalletInterfaceFile03,"Write_Txt_filechooserdialog");
-  gtk_dialog_run(GTK_DIALOG(Pallet_Write_Data.window1));
-  gtk_widget_destroy(Pallet_Write_Data.window1);
+  create_Write_JLD_filechooserdialog(&Pallet_Write_Data,PalletInterfaceFile03,"Write_JLD_filechooserdialog");
+  gtk_dialog_run(GTK_DIALOG(Pallet_Write_Data.function_window1));
+  gtk_widget_destroy(Pallet_Write_Data.function_window1);
 
-  if((Pallet_Write_Data.proc_flag1) ==TRUE)
+  if((Pallet_Write_Data.process_check_flag1) ==TRUE)
   {
 	Vte_terminal_insert(&VTE[VTE_No],Pallet_Write_Data.script1);
 	g_free( Pallet_Write_Data.script1 );
   }
   
-  (Pallet_Write_Data.proc_flag1) =FALSE;
+  (Pallet_Write_Data.process_check_flag1) =FALSE;
 }
 
 /*****************************************************************************************************
  * function:エディタ用処理
  * 
  * 
- * glade:Write_CSV_filechooserdialog
+ * glade:Write_JLD_filechooserdialog
 *****************************************************************************************************/
-G_MODULE_EXPORT void cb_write_data_function1_for_editor(GtkWidget *widget, gpointer data)
+G_MODULE_EXPORT void cb_write_data_function3_for_editor(GtkWidget *widget, gpointer data)
 {
-  create_Write_CSV_filechooserdialog(&Pallet_Write_Data,PalletInterfaceFile03,"Write_Txt_filechooserdialog");
-  gtk_dialog_run(GTK_DIALOG(Pallet_Write_Data.window1));
-  gtk_widget_destroy(Pallet_Write_Data.window1);
+  create_Write_JLD_filechooserdialog(&Pallet_Write_Data,PalletInterfaceFile03,"Write_JLD_filechooserdialog");
+  gtk_dialog_run(GTK_DIALOG(Pallet_Write_Data.function_window1));
+  gtk_widget_destroy(Pallet_Write_Data.function_window1);
 
-  if((Pallet_Write_Data.proc_flag1) ==TRUE)
+  if((Pallet_Write_Data.process_check_flag1) ==TRUE)
   {
 	  ScriptEditor_insert(&SCRIPTEDITOR[SCRIPTEDITOR_No],Pallet_Write_Data.script1);
 	  g_free( Pallet_Write_Data.script1 );
   }
   
-  (Pallet_Write_Data.proc_flag1) =FALSE;
+  (Pallet_Write_Data.process_check_flag1) =FALSE;
 }
 

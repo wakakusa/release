@@ -11,6 +11,7 @@
     <property name="default_height">800</property>
     <property name="icon">./pixmaps/kuikjulia.svg</property>
     <signal name="destroy" handler="vte_quit" swapped="no"/>
+    <signal name="focus-in-event" handler="Get_Management_VTE_No" object="vte_VTE_No" swapped="yes"/>
     <child>
       <object class="GtkBox" id="box1">
         <property name="visible">True</property>
@@ -241,8 +242,8 @@
                 <property name="encoding">UTF-8</property>
                 <property name="scrollback_lines">5120</property>
                 <property name="scroll_on_keystroke">True</property>
-                <accelerator key="c" signal="copy-clipboard" modifiers="GDK_CONTROL_MASK"/>
                 <accelerator key="v" signal="paste-clipboard" modifiers="GDK_CONTROL_MASK"/>
+                <accelerator key="c" signal="copy-clipboard" modifiers="GDK_CONTROL_MASK"/>
               </object>
             </child>
           </object>

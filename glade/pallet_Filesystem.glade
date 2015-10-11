@@ -572,7 +572,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">read julia script file</property>
-                        <property name="label" translatable="yes">Func3</property>
+                        <property name="label" translatable="yes">include</property>
                         <property name="justify">center</property>
                         <property name="single_line_mode">True</property>
                         <attributes>
@@ -643,7 +643,7 @@
                       <object class="GtkLabel" id="label04">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Func4</property>
+                        <property name="label" translatable="yes">load</property>
                         <property name="justify">center</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
@@ -713,7 +713,7 @@
                       <object class="GtkLabel" id="label05">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Func5</property>
+                        <property name="label" translatable="yes">save</property>
                         <property name="justify">center</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
@@ -1218,11 +1218,11 @@
               <object class="GtkLabel" id="save_filechooserdialog_label1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">object name</property>
+                <property name="label" translatable="yes">variable_name</property>
               </object>
             </child>
             <child>
-              <object class="GtkEntry" id="save_filechooserdialog_entry1">
+              <object class="GtkEntry" id="save_filechooserdialog_entry_variable_name">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="max_length">511</property>

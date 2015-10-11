@@ -2,27 +2,27 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
-  <object class="GtkFileChooserDialog" id="Write_CSV_filechooserdialog">
+  <object class="GtkFileChooserDialog" id="Write_TEXT_filechooserdialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Write to csv</property>
+    <property name="title" translatable="yes">Write to Text</property>
     <property name="role">GtkFileChooserDialog</property>
     <property name="type_hint">dialog</property>
     <property name="action">save</property>
     <property name="do_overwrite_confirmation">True</property>
     <child internal-child="vbox">
-      <object class="GtkBox" id="Write_CSV_filechooserdialog-vbox1">
+      <object class="GtkBox" id="Write_TEXT_filechooserdialog-vbox1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="Write_CSV_filechooserdialog-action_area1">
+          <object class="GtkButtonBox" id="Write_TEXT_filechooserdialog-action_area1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="Write_CSV_filechooserdialog_cancel_button1">
+              <object class="GtkButton" id="Write_TEXT_filechooserdialog_cancel_button">
                 <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -37,7 +37,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="Write_CSV_filechooserdialog_ok_button1">
+              <object class="GtkButton" id="Write_TEXT_filechooserdialog_ok_button">
                 <property name="label">gtk-save</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -59,104 +59,185 @@
           </packing>
         </child>
         <child>
-          <object class="GtkTable" id="Write_CSV_filechooserdialog_table1">
+          <object class="GtkBox" id="box_TEXT1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="n_rows">2</property>
-            <property name="n_columns">2</property>
+            <property name="orientation">vertical</property>
             <child>
-              <object class="GtkLabel" id="Write_CSV_filechooserdialog_label1">
+              <object class="GtkGrid" id="Write_TEXT_filechooserdialog_table1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">object name</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkEntry" id="Write_CSV_filechooserdialog_entry1">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="max_length">511</property>
-                <property name="invisible_char">●</property>
-                <property name="text" translatable="yes">x</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
+                <child>
+                  <object class="GtkLabel" id="Write_TEXT_filechooserdialog_label1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">variable_name</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="Write_TEXT_filechooserdialog_entry_variable_name">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="activates_default">True</property>
+                    <property name="text" translatable="yes">x</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="Write_TEXT_filechooserdialog_checkbutton_header">
+                    <property name="label" translatable="yes">header</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">if you want to write header ,check on</property>
+                    <property name="xalign">0</property>
+                    <property name="active">True</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
               </object>
               <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="Write_CSV_filechooserdialog_checkbutton1">
-                <property name="label" translatable="yes">written row.names</property>
+              <object class="GtkExpander" id="option_TEXT">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="xalign">0.5</property>
-                <property name="draw_indicator">True</property>
+                <child>
+                  <object class="GtkGrid" id="grid_TEXT1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkCheckButton" id="Write_TEXT_filechooserdialog_checkbutton_separator">
+                        <property name="label" translatable="yes">separator</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="xalign">0</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="Write_TEXT_filechooserdialog_entry_separator">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="text" translatable="yes">,</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="Write_TEXT_filechooserdialog_checkbutton_quotemark">
+                        <property name="label" translatable="yes">quotemark</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="xalign">0</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="Write_TEXT_filechooserdialog_entry_quotemark">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="text" translatable="yes">"</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+                <child type="label">
+                  <object class="GtkLabel" id="option_label1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">other</property>
+                  </object>
+                </child>
               </object>
               <packing>
-                <property name="top_attach">1</property>
-                <property name="bottom_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="Write_CSV_filechooserdialog_checkbutton2">
-                <property name="label" translatable="yes">written col.names</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="xalign">0.5</property>
-                <property name="active">True</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-                <property name="top_attach">1</property>
-                <property name="bottom_attach">2</property>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="fill">True</property>
             <property name="position">2</property>
           </packing>
         </child>
       </object>
     </child>
     <action-widgets>
-      <action-widget response="0">Write_CSV_filechooserdialog_cancel_button1</action-widget>
-      <action-widget response="0">Write_CSV_filechooserdialog_ok_button1</action-widget>
+      <action-widget response="0">Write_TEXT_filechooserdialog_cancel_button</action-widget>
+      <action-widget response="0">Write_TEXT_filechooserdialog_ok_button</action-widget>
     </action-widgets>
   </object>
-  <object class="GtkFileChooserDialog" id="Write_Excel_filechooserdialog">
+  <object class="GtkFileFilter" id="filefilter_JLD">
+    <patterns>
+      <pattern>*.JLD</pattern>
+      <pattern>*.jld</pattern>
+    </patterns>
+  </object>
+  <object class="GtkFileChooserDialog" id="Write_JLD_filechooserdialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Write to csv</property>
+    <property name="title" translatable="yes">Write to HDF5</property>
     <property name="role">GtkFileChooserDialog</property>
     <property name="type_hint">dialog</property>
     <property name="action">save</property>
     <property name="do_overwrite_confirmation">True</property>
+    <property name="filter">filefilter_JLD</property>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox2">
+      <object class="GtkBox" id="filechooserdialog-vbox2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area2">
+          <object class="GtkButtonBox" id="filechooserdialog-action_area2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="Write_CSV_filechooserdialog_cancel_button2">
+              <object class="GtkButton" id="Write_JLD_filechooserdialog_cancel_button">
                 <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <signal name="clicked" handler="Pallet_Write_Data_chooserdialog_Cancel" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -165,13 +246,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="Write_CSV_filechooserdialog_ok_button2">
+              <object class="GtkButton" id="Write_JLD_filechooserdialog_ok_button">
                 <property name="label">gtk-save</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
-                <signal name="clicked" handler="create_Excel_Excel_filechooserdialog_OK" swapped="no"/>
+                <signal name="clicked" handler="create_WriteJLD_filechooserdialog_OK" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -187,126 +268,168 @@
           </packing>
         </child>
         <child>
-          <object class="GtkTable" id="Write_Excel_filechooserdialog_table1">
+          <object class="GtkGrid" id="grid_JLD">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="n_rows">4</property>
-            <property name="n_columns">2</property>
             <child>
-              <object class="GtkLabel" id="Write_Excel_filechooserdialog_label1">
+              <object class="GtkLabel" id="Write_JLD_filechooserdialog_label11">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">object name</property>
+                <property name="label" translatable="yes">variable_name</property>
               </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="Write_Excel_filechooserdialog_entry1">
+              <object class="GtkEntry" id="Write_JLD_filechooserdialog_entry_variable_name">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="max_length">511</property>
-                <property name="invisible_char">●</property>
                 <property name="text" translatable="yes">x</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="Write_Excel_filechooserdialog_label2">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">sheet name</property>
-              </object>
-              <packing>
-                <property name="top_attach">1</property>
-                <property name="bottom_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="Write_Excel_filechooserdialog_label3">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">startRow</property>
-              </object>
-              <packing>
-                <property name="top_attach">2</property>
-                <property name="bottom_attach">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="Write_Excel_filechooserdialog_label4">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">startCol</property>
-              </object>
-              <packing>
-                <property name="top_attach">3</property>
-                <property name="bottom_attach">4</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry" id="Write_Excel_filechooserdialog_entry2">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="invisible_char">●</property>
-                <property name="text" translatable="yes">sheet1</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-                <property name="top_attach">1</property>
-                <property name="bottom_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry" id="Write_Excel_filechooserdialog_entry3">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="invisible_char">●</property>
-                <property name="text" translatable="yes">1</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-                <property name="top_attach">2</property>
-                <property name="bottom_attach">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry" id="Write_Excel_filechooserdialog_entry4">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="invisible_char">●</property>
-                <property name="text" translatable="yes">1</property>
-                <property name="primary_icon_activatable">False</property>
-                <property name="secondary_icon_activatable">False</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="right_attach">2</property>
-                <property name="top_attach">3</property>
-                <property name="bottom_attach">4</property>
+                <property name="top_attach">0</property>
               </packing>
             </child>
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="fill">True</property>
             <property name="position">2</property>
           </packing>
         </child>
       </object>
     </child>
     <action-widgets>
-      <action-widget response="0">Write_CSV_filechooserdialog_cancel_button2</action-widget>
-      <action-widget response="0">Write_CSV_filechooserdialog_ok_button2</action-widget>
+      <action-widget response="0">Write_JLD_filechooserdialog_cancel_button</action-widget>
+      <action-widget response="0">Write_JLD_filechooserdialog_ok_button</action-widget>
+    </action-widgets>
+  </object>
+  <object class="GtkFileFilter" id="filefilter_hdf5">
+    <patterns>
+      <pattern>*.h5</pattern>
+      <pattern>*.hdf5</pattern>
+    </patterns>
+  </object>
+  <object class="GtkFileChooserDialog" id="Write_HDF5_filechooserdialog">
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Write to HDF5</property>
+    <property name="role">GtkFileChooserDialog</property>
+    <property name="type_hint">dialog</property>
+    <property name="action">save</property>
+    <property name="do_overwrite_confirmation">True</property>
+    <property name="filter">filefilter_hdf5</property>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="dialog-vbox_HDF5">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="dialog-action_area2_HDF5">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="Write_HDF5_filechooserdialog_cancel_button">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="Pallet_Write_Data_chooserdialog_Cancel" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="Write_HDF5_filechooserdialog_ok_button">
+                <property name="label">gtk-save</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="create_WriteHDF5_filechooserdialog_OK" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="grid_HDF5">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="Write_HDF5_filechooserdialog_label11">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">variable_name</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="Write_HDF5_filechooserdialog_label12">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">groupe name</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="Write_HDF5_filechooserdialog_entry_groupe_name">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="text" translatable="yes">groupe/object</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="Write_HDF5_filechooserdialog_entry_variable_name">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="text" translatable="yes">x</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="0">Write_HDF5_filechooserdialog_cancel_button</action-widget>
+      <action-widget response="0">Write_HDF5_filechooserdialog_ok_button</action-widget>
     </action-widgets>
   </object>
   <object class="GtkImage" id="image1">
@@ -680,7 +803,6 @@
                   <object class="GtkFrame" id="frame01">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">set working directory</property>
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">none</property>
                     <child>
@@ -733,7 +855,7 @@
                       <object class="GtkLabel" id="label01">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">CSV</property>
+                        <property name="label" translatable="yes">Text</property>
                         <property name="justify">center</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
@@ -751,7 +873,6 @@
                   <object class="GtkFrame" id="frame02">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">get working directory</property>
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">none</property>
                     <child>
@@ -804,7 +925,7 @@
                       <object class="GtkLabel" id="label02">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Excel</property>
+                        <property name="label" translatable="yes">HDF5</property>
                         <property name="justify">center</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
@@ -822,7 +943,6 @@
                   <object class="GtkFrame" id="frame03">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">set source file</property>
                     <property name="label_xalign">0</property>
                     <property name="shadow_type">none</property>
                     <child>
@@ -875,7 +995,7 @@
                       <object class="GtkLabel" id="label03">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Txt</property>
+                        <property name="label" translatable="yes">JLD</property>
                         <property name="justify">center</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>

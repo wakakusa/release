@@ -16,7 +16,7 @@ G_MODULE_EXPORT void cb_Pallet_Master( GtkImageMenuItem *pallet_test, gpointer u
 {
   create_pallet(&Pallet_Master,PalletInterfaceFile99,"Pallet_Master");
     /* windowの表示 */
-  gtk_widget_show_all((Pallet_Master.window1)); 
+  gtk_widget_show_all((Pallet_Master.pallet_window)); 
 } 
 
 /*****************************************************************************************************
@@ -27,7 +27,7 @@ G_MODULE_EXPORT void cb_Pallet_Master( GtkImageMenuItem *pallet_test, gpointer u
 *****************************************************************************************************/
 G_MODULE_EXPORT void Pallet_Master_filechooserdialog1_Cancel(GtkWidget *widget, gpointer data)
 {
-  gtk_widget_destroy((Pallet_Master.window1)); 
+  gtk_widget_destroy((Pallet_Master.pallet_window)); 
 }
 
 

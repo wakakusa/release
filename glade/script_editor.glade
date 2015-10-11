@@ -342,6 +342,21 @@
               </packing>
             </child>
             <child>
+              <object class="GtkToolButton" id="open_script">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">open_script</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-open</property>
+                <signal name="clicked" handler="Script_FileOpen_Dialog" swapped="no"/>
+                <accelerator key="o" signal="clicked" modifiers="GDK_CONTROL_MASK"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkToolButton" id="save_script">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -350,20 +365,6 @@
                 <property name="stock_id">gtk-save</property>
                 <signal name="clicked" handler="Script_QuikFileSave" swapped="no"/>
                 <accelerator key="s" signal="clicked" modifiers="GDK_CONTROL_MASK"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="homogeneous">True</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkToolButton" id="open_script">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">open_script</property>
-                <property name="use_underline">True</property>
-                <property name="stock_id">gtk-open</property>
-                <signal name="clicked" handler="Script_FileOpen_Dialog" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -456,9 +457,9 @@
                         <property name="can_focus">False</property>
                         <property name="use_stock">False</property>
                         <signal name="activate" handler="Send_Script_to_VTE_from_Editor" swapped="no"/>
-                        <accelerator key="Return" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                        <accelerator key="Return" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <accelerator key="F3" signal="activate"/>
+                        <accelerator key="Return" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <accelerator key="KP_Enter" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
                   </object>

@@ -14,7 +14,6 @@ SET(FUNCTION_SOURCE pallet_read_data.c pallet_read_data_function01.c pallet_read
 	     pallet_read_data_function05.c pallet_read_data_function06.c pallet_read_data_function07.c pallet_read_data_function08.c 
 	     pallet_read_data_function09.c pallet_read_data_function10.c)
 
-
 ##ライブラリの作成
 add_library(${FUNCTION_LIB_READ_DATA} SHARED ${PALLET} ${FUNCTION_SOURCE})
 

@@ -5,81 +5,68 @@
 #include "script_editor_window_structures.h"
 #include "pallet_defines.h"
 
- /*****************************************************************************************************
- * function4: R binary file load
+/**********************************************************************************************
+ * function4:JLDファイルへ dataの書き込み関数定義。 
+ * 
+ **********************************************************************************************/
+
+
+/**********************************************************************************************
+ * function:データ読み込み用ダイアログ表示callback関数。 
  * 
  * 
- * GUI:load_chooserdialog
+ * glade:Write_JLD_filechooserdialog
+ **********************************************************************************************/
+
+
+/**********************************************************************************************
+ * function:ファイル選択ダイアログをOKで閉じ、処理する 
+ * 
+ * 
+ * glade:none
+ **********************************************************************************************/
+
+
+
+/*****************************************************************************************************
+ * function:ターミナル用処理
+ * 
+ * 
+ * glade:Write_HDF5_filechooserdialog
 *****************************************************************************************************/
-void create_loadfile_chooserdialog(StructPalletWidget *struct_widget,char UI_FILE[PATH_LENGTH],char Window_name[512])
+G_MODULE_EXPORT void cb_write_data_function4_for_terminal(GtkWidget *widget, gpointer data)
 {
-  GtkBuilder *builder;
-  GError* error = NULL;
+//  create_Write_JLD_filechooserdialog(&Pallet_Write_Data,PalletInterfaceFile03,"Write_JLD_filechooserdialog");
+  gtk_dialog_run(GTK_DIALOG(Pallet_Write_Data.function_window1));
+  gtk_widget_destroy(Pallet_Write_Data.function_window1);
 
-  /* GtkBuilder作成 */
-  builder = gtk_builder_new(); 
-  
-  /* UI_FILEの読み込み*/
-  if (!gtk_builder_add_from_file (builder, UI_FILE, &error))
+  if((Pallet_Write_Data.process_check_flag1) ==TRUE)
   {
-	g_warning ("Couldn't load builder file: %s", error->message);
-	g_error_free (error);
+	Vte_terminal_insert(&VTE[VTE_No],Pallet_Write_Data.script1);
+	g_free( Pallet_Write_Data.script1 );
   }
-
-  /* windowのオブジェクト取得 */
-  (struct_widget->window1) = GTK_WIDGET( gtk_builder_get_object(builder, Window_name)); 
-  /*複数のウィジェットを操作する場合、構造体に格納にすること。
-   * 格納先にあわせて、GTK_LABELやGTK_ENTRYなどGTK_～を変更すること。
-   *不明な場合はGTK_WIDGETでも可能。ただしエラーは出力される。*/
-
-
-  /* UI_FILEのシグナルハンドラの設定  This is important */
-  gtk_builder_connect_signals (builder, &struct_widget); 
-
-   g_object_unref( G_OBJECT( builder ) );
-} 
-
-/*ファイル選択ダイアログをOKで閉じ、処理する*/
-G_MODULE_EXPORT void create_loadfile_chooserdialog_FileOpen_OK (GtkWidget *widget,gpointer data  )
-{
-  (Pallet_Operation.file1) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(Pallet_Operation.window1));
-
-  (Pallet_Operation.script1)= g_strconcat("load(\"",Pallet_Operation.file1,"\")\n",NULL);
   
-  (Pallet_Operation.proc_flag1) =TRUE;
-  gtk_widget_destroy((Pallet_Operation.window1)); 
+  (Pallet_Write_Data.process_check_flag1) =FALSE;
 }
 
-/**function4:load()**/
-/*for terminal*/
-G_MODULE_EXPORT void cb_basic_function4_for_terminal(GtkWidget *widget, gpointer data)
+/*****************************************************************************************************
+ * function:エディタ用処理
+ * 
+ * 
+ * glade:Write_HDF5_filechooserdialog
+*****************************************************************************************************/
+G_MODULE_EXPORT void cb_write_data_function4_for_editor(GtkWidget *widget, gpointer data)
 {
-  create_loadfile_chooserdialog(&Pallet_Operation,PalletInterfaceFile01,"load_filechooserdialog");
-  gtk_dialog_run(GTK_DIALOG(Pallet_Operation.window1));
-  gtk_widget_destroy(Pallet_Operation.window1);
+//  create_Write_JLD_filechooserdialog(&Pallet_Write_Data,PalletInterfaceFile03,"Write_JLD_filechooserdialog");
+  gtk_dialog_run(GTK_DIALOG(Pallet_Write_Data.function_window1));
+  gtk_widget_destroy(Pallet_Write_Data.function_window1);
 
-  if((Pallet_Operation.proc_flag1) ==TRUE)
+  if((Pallet_Write_Data.process_check_flag1) ==TRUE)
   {
-	Vte_terminal_insert(&VTE[VTE_No],Pallet_Operation.script1);
-	g_free( Pallet_Operation.script1 );
+	  ScriptEditor_insert(&SCRIPTEDITOR[SCRIPTEDITOR_No],Pallet_Write_Data.script1);
+	  g_free( Pallet_Write_Data.script1 );
   }
   
-  (Pallet_Operation.proc_flag1) =FALSE;
-}
-
-/*for editor*/
-G_MODULE_EXPORT void cb_basic_function4_for_editor(GtkWidget *widget, gpointer data)
-{
-  create_loadfile_chooserdialog(&Pallet_Operation,PalletInterfaceFile01,"load_filechooserdialog");
-  gtk_dialog_run(GTK_DIALOG(Pallet_Operation.window1));
-  gtk_widget_destroy(Pallet_Operation.window1);
-
-  if((Pallet_Operation.proc_flag1) ==TRUE)
-  {	  
-	  ScriptEditor_insert(&SCRIPTEDITOR[SCRIPTEDITOR_No],Pallet_Operation.script1);
-	  g_free( Pallet_Operation.script1 );
-  }
-  
-  (Pallet_Operation.proc_flag1) =FALSE;
+  (Pallet_Write_Data.process_check_flag1) =FALSE;
 }
 

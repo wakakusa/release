@@ -14,7 +14,7 @@
 *****************************************************************************************************/
 G_MODULE_EXPORT void cb_Pallet_Filesystem( GtkImageMenuItem *pallet_test, gpointer user_data ) 
 {
-  (Pallet_Filesystem.proc_flag1) =FALSE;
+  (Pallet_Filesystem.process_check_flag1) =FALSE;
   create_pallet(&Pallet_Filesystem,PalletInterfaceFile01,"Pallet_Filesystem");
     /* windowの表示 */
   gtk_widget_show_all((Pallet_Filesystem.pallet_window)); 
@@ -28,5 +28,5 @@ G_MODULE_EXPORT void cb_Pallet_Filesystem( GtkImageMenuItem *pallet_test, gpoint
 *****************************************************************************************************/
 G_MODULE_EXPORT void Pallet_Filesystem_chooserdialog_Cancel(GtkWidget *widget, gpointer data)
 {
-  gtk_widget_destroy((Pallet_Filesystem.window1)); 
+  gtk_widget_destroy((Pallet_Filesystem.function_window1)); 
 }

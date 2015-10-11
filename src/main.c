@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
 
   gtk_widget_show_all((SCRIPTEDITOR[0].window1)); 
   SCRIPTEDITOR_No_HighWaterMark++;//SCRIPTEDITOR_No_HighWaterMarkのカウントアップ
+  VTE_No_HighWaterMark++;//VTE_No_HighWaterMarkのカウントアップ
 
   /*windowの開始位置を指定*/
   gtk_window_move (MainWindow.window1,0,0);

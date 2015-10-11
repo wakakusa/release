@@ -10,7 +10,7 @@
 #define script03 "x\n"
 #define script04 "y\n"
 #define script05 "using Gadfly\n"
-#define script06 "plot(x,y)\n"
+#define script06 "plot(x=x,y=y)\n"
 #define script07 ""
 #define script08 ""
 #define script09 "versioninfo()\n"

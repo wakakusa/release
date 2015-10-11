@@ -20,7 +20,7 @@
 *****************************************************************************************************/
 G_MODULE_EXPORT void cb_Pallet_Write_Data( GtkImageMenuItem *pallet_test, gpointer user_data ) 
 {
-	(Pallet_Write_Data.proc_flag1) =FALSE;
+	(Pallet_Write_Data.process_check_flag1) =FALSE;
 	create_pallet(&Pallet_Write_Data,PalletInterfaceFile03,"Pallet_Write_Data");
     /* windowの表示 */
 	gtk_widget_show_all((Pallet_Write_Data.pallet_window)); 
@@ -35,6 +35,6 @@ G_MODULE_EXPORT void cb_Pallet_Write_Data( GtkImageMenuItem *pallet_test, gpoint
 *****************************************************************************************************/
 G_MODULE_EXPORT void Pallet_Write_Data_chooserdialog_Cancel(GtkWidget *widget, gpointer data)
 {
-  gtk_widget_destroy((Pallet_Write_Data.window1)); 
+  gtk_widget_destroy((Pallet_Write_Data.function_window1)); 
 }
 

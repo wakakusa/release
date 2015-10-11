@@ -92,14 +92,16 @@ G_MODULE_EXPORT void Script_FileOpen_OK (GtkWidget *widget,gpointer data  )
   /* windowの表示 */
   gtk_widget_show_all((SCRIPTEDITOR[SCRIPTEDITOR_No_HighWaterMark].window1)); 
   StructSCRIPTEDITORWidget *struct_widget =&SCRIPTEDITOR[SCRIPTEDITOR_No_HighWaterMark];
-  
+  ( SCRIPT_OpenSave[SCRIPTEDITOR_No_HighWaterMark].file1 ) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(SCRIPT_OpenSave[SCRIPTEDITOR_No].window1));
+
+/*アクティブなテキストエディタに表示*/  
 //  StructSCRIPTEDITORWidget *struct_widget =&SCRIPTEDITOR[SCRIPTEDITOR_No];
+//  ( SCRIPT_OpenSave[SCRIPTEDITOR_No].file1 ) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(SCRIPT_OpenSave[SCRIPTEDITOR_No].window1));
+
   gchar *file;
   gchar *buf;
   gsize size;
  
-//  ( SCRIPT_OpenSave[SCRIPTEDITOR_No].file1 ) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(SCRIPT_OpenSave[SCRIPTEDITOR_No].window1));
-  ( SCRIPT_OpenSave[SCRIPTEDITOR_No_HighWaterMark].file1 ) = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(SCRIPT_OpenSave[SCRIPTEDITOR_No].window1));
    
   /*テキストファイルを読み込み、テキストビューに表示*/
   if (g_file_get_contents( SCRIPT_OpenSave[SCRIPTEDITOR_No_HighWaterMark].file1 ,&buf,&size,NULL)) {
